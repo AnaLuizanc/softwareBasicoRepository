@@ -1,0 +1,25 @@
+# Compiled object files
+*.o
+
+# Executable files
+*.out
+*.exe
+*.elf
+
+# Assembly listing files
+*.lst
+
+# Debug files
+*.dbg
+
+# Backup files
+*~
+
+# Core dumps
+core
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
