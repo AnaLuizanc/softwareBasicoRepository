@@ -13,3 +13,6 @@ Este código declara duas variáveis globais do tipo `long int`, atribui valores
 ### [`expressionArithmetic.c`](expressionArithmetic.c)
 Este exemplo declara três variáveis globais do tipo `int`, realiza uma operação aritmética envolvendo soma e multiplicação (`r = a + b * 2`) e retorna o resultado. O código ilustra como expressões aritméticas com múltiplos operadores e precedência podem ser implementadas em Assembly, servindo como referência para tradução de expressões matemáticas mais complexas.
 
+### [`expressionArithmetic2.c`](expressionArithmetic2.c)
+Neste exemplo, duas variáveis globais do tipo `char` são declaradas e inicializadas, e uma variável global do tipo `int` é usada para armazenar o resultado. O programa realiza a operação aritmética `r = a - b * 5` e retorna o resultado. Este código é útil para entender como trabalhar com tipos de dados diferentes (char e int) e como implementar expressões envolvendo multiplicação e subtração em Assembly, incluindo o tratamento de valores negativos.
+
