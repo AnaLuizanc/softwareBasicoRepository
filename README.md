@@ -8,7 +8,7 @@ Este repositório contém uma coleção de programas escritos em linguagem Assem
 
 | Pasta           | Conteúdo                                                              |
 |-----------------|-----------------------------------------------------------------------|
-| `basico/`       | Programas introdutórios: aritmética, loops e condicionais.   |
+| `basic/`       | Programas introdutórios: aritmética, loops e condicionais.   |
 <!-- | `intermediario/`| Projetos com entrada do usuário, funções, operações aritméticas.      |
 | `avancado/`     | Projetos que envolvem manipulação de arquivos, recursão, pilha, etc.  |
 | `avancado/integracao_c/` | Integração entre C e Assembly via funções externas.         | -->
