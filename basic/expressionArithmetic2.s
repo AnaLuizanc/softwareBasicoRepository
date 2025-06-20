@@ -5,11 +5,11 @@ r: .long 0
 .section .text
 .globl _start
 _start:
-    movb $5, %bl
-    movb b, %al
-    imulb %bl
-    subb a, %al
-    movb %al, r
-    movzxb %al, %edi
+    movsbl b, %eax      # eax = (int)b
+    imull $5, %eax      # eax = b * 5
+    movsbl a, %ecx      # ecx = (int)a
+    subl %eax, %ecx     # ecx = a - (b * 5)
+    movl %ecx, r
+    movl %ecx, %edi 
     movq $60, %rax
     syscall
