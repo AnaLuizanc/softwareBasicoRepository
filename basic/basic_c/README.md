@@ -16,3 +16,6 @@ Este exemplo declara três variáveis globais do tipo `int`, realiza uma operaç
 ### [`expressionArithmetic2.c`](expressionArithmetic2.c)
 Neste exemplo, duas variáveis globais do tipo `char` são declaradas e inicializadas, e uma variável global do tipo `int` é usada para armazenar o resultado. O programa realiza a operação aritmética `r = a - b * 5` e retorna o resultado. Este código é útil para entender como trabalhar com tipos de dados diferentes (char e int) e como implementar expressões envolvendo multiplicação e subtração em Assembly, incluindo o tratamento de valores negativos.
 
+### [`expressionWithMod.c`](expressionWithMod.c)
+Este exemplo utiliza variáveis globais do tipo `short int` e realiza a operação aritmética `r = c % b * a`, ou seja, calcula o resto da divisão de `c` por `b` e multiplica esse resultado por `a`. O código é útil para compreender como implementar operações de módulo e multiplicação em Assembly, além de mostrar o uso de diferentes tipos de dados.
+
