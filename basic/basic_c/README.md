@@ -10,3 +10,6 @@ Os exemplos aqui presentes auxiliam na compreensão da lógica e estrutura dos p
 ### [`sumTwoVariables.c`](sumTwoVariables.c)
 Este código declara duas variáveis globais do tipo `long int`, atribui valores a elas, realiza a soma e retorna o resultado. Ele serve como um exemplo simples de manipulação de variáveis globais e operações aritméticas básicas, facilitando a compreensão de como implementar lógica semelhante em Assembly.
 
+### [`expressionArithmetic.c`](expressionArithmetic.c)
+Este exemplo declara três variáveis globais do tipo `int`, realiza uma operação aritmética envolvendo soma e multiplicação (`r = a + b * 2`) e retorna o resultado. O código ilustra como expressões aritméticas com múltiplos operadores e precedência podem ser implementadas em Assembly, servindo como referência para tradução de expressões matemáticas mais complexas.
+
