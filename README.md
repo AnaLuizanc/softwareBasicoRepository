@@ -20,5 +20,5 @@ Este repositório contém uma coleção de programas escritos em linguagem Assem
 ### Usando o `as` (sintaxe AT&T - padrão GNU):
 ```bash
 as programa.s -o programa.o
-ld programa.o -o programa
-./programa
+ld programa.o -o programa.out
+./programa.out
