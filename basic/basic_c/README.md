@@ -19,3 +19,6 @@ Neste exemplo, duas variáveis globais do tipo `char` são declaradas e iniciali
 ### [`expressionWithMod.c`](expressionWithMod.c)
 Este exemplo utiliza variáveis globais do tipo `short int` e realiza a operação aritmética `r = c % b * a`, ou seja, calcula o resto da divisão de `c` por `b` e multiplica esse resultado por `a`. O código é útil para compreender como implementar operações de módulo e multiplicação em Assembly, além de mostrar o uso de diferentes tipos de dados.
 
+### [`calculateExpoent.c`](calculateExpoent.c)
+Este exemplo declara três variáveis globais do tipo `int` e utiliza um laço `while` para calcular a potência de uma base elevada a um expoente (`res = base^expoente`). A cada iteração, multiplica o resultado atual pela base e decrementa o expoente até que ele seja zero. O código é útil para entender como implementar laços e operações de exponenciação em Assembly.
+

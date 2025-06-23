@@ -19,4 +19,7 @@ Demonstrar como traduzir operações comuns de C para Assembly, incluindo manipu
 - [`expressionWithMod.s`](expressionWithMod.s):
   Realiza a operação `r = c % b * a` com variáveis globais do tipo `short int`, demonstrando o uso de módulo e multiplicação em Assembly. Referência: [`basic_c/expressionWithMod.c`](basic_c/expressionWithMod.c).
 
+- [`calculateExpoent.s`](calculateExpoent.s):
+  Calcula a potência de uma base elevada a um expoente usando um laço, equivalente à expressão `res = base^expoente`. O programa multiplica o resultado acumulado pela base e decrementa o expoente até chegar a zero. Referência: [`basic_c/calculateExpoent.c`](basic_c/calculateExpoent.c).
+
 Consulte cada arquivo `.s` para detalhes da implementação e compare com o respectivo código em C na pasta `basic_c` para entender a tradução entre as linguagens.
