@@ -22,4 +22,7 @@ Demonstrar como traduzir operações comuns de C para Assembly, incluindo manipu
 - [`calculateExpoent.s`](calculateExpoent.s):
   Calcula a potência de uma base elevada a um expoente usando um laço, equivalente à expressão `res = base^expoente`. O programa multiplica o resultado acumulado pela base e decrementa o expoente até chegar a zero. Referência: [`basic_c/calculateExpoent.c`](basic_c/calculateExpoent.c).
 
+- [`calculateFactorial.s`](calculateFactorial.s):
+  Calcula o fatorial de um número usando um laço, multiplicando o resultado acumulado pelo valor do contador e decrementando até chegar a 1. O resultado é retornado como código de saída. Referência: [`basic_c/calculateFactorial.c`](basic_c/calculateFactorial.c).
+
 Consulte cada arquivo `.s` para detalhes da implementação e compare com o respectivo código em C na pasta `basic_c` para entender a tradução entre as linguagens.

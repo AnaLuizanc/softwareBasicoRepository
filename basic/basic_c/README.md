@@ -22,3 +22,6 @@ Este exemplo utiliza variáveis globais do tipo `short int` e realiza a operaç�
 ### [`calculateExpoent.c`](calculateExpoent.c)
 Este exemplo declara três variáveis globais do tipo `int` e utiliza um laço `while` para calcular a potência de uma base elevada a um expoente (`res = base^expoente`). A cada iteração, multiplica o resultado atual pela base e decrementa o expoente até que ele seja zero. O código é útil para entender como implementar laços e operações de exponenciação em Assembly.
 
+### [`calculateFactorial.c`](calculateFactorial.c)
+Este exemplo declara duas variáveis globais do tipo `int` e utiliza um laço `while` para calcular o fatorial de um número (`res = fatorial!`). A cada iteração, multiplica o resultado atual pelo valor do fatorial e decrementa o fatorial até que ele seja zero. O código é útil para entender como implementar laços e operações de fatorial em Assembly.
+
