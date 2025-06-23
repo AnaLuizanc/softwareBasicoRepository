@@ -25,3 +25,6 @@ Este exemplo declara três variáveis globais do tipo `int` e utiliza um laço `
 ### [`calculateFactorial.c`](calculateFactorial.c)
 Este exemplo declara duas variáveis globais do tipo `int` e utiliza um laço `while` para calcular o fatorial de um número (`res = fatorial!`). A cada iteração, multiplica o resultado atual pelo valor do fatorial e decrementa o fatorial até que ele seja zero. O código é útil para entender como implementar laços e operações de fatorial em Assembly.
 
+### [`isEven.c`](isEven.c)
+Este exemplo declara uma variável global do tipo `int` e utiliza uma estrutura condicional para verificar se o valor é par (`numero % 2 == 0`). Se for par, retorna 1; caso contrário, retorna 0. O código é útil para entender como implementar verificações de paridade em Assembly.
+

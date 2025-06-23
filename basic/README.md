@@ -25,4 +25,7 @@ Demonstrar como traduzir operações comuns de C para Assembly, incluindo manipu
 - [`calculateFactorial.s`](calculateFactorial.s):
   Calcula o fatorial de um número usando um laço, multiplicando o resultado acumulado pelo valor do contador e decrementando até chegar a 1. O resultado é retornado como código de saída. Referência: [`basic_c/calculateFactorial.c`](basic_c/calculateFactorial.c).
 
+- [`isEven.s`](isEven.s):
+  Verifica se o valor armazenado em `numero` é par ou ímpar utilizando o resto da divisão por 2. Se for par, retorna 1 como código de saída; se for ímpar, retorna 0. Referência: [`basic_c/isEven?.c`](basic_c/isEven?.c).
+
 Consulte cada arquivo `.s` para detalhes da implementação e compare com o respectivo código em C na pasta `basic_c` para entender a tradução entre as linguagens.
