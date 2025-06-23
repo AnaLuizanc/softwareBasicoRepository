@@ -1,14 +1,11 @@
 #include <stdio.h>
-int base = 3;
-int expoente = 3;
-int res;
-int i;
+int base = 2;
+int expoente = 5;
+int res = 1;
 int main(){
-    i = expoente;
-    res = 1;
-    while(i > 0){
+    while(expoente > 0){
         res = res * base;
-        i--; 
+        expoente--; 
     }
     return res;
 }
