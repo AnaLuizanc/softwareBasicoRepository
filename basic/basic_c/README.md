@@ -28,3 +28,6 @@ Este exemplo declara duas variáveis globais do tipo `int` e utiliza um laço `w
 ### [`isEven.c`](isEven.c)
 Este exemplo declara uma variável global do tipo `int` e utiliza uma estrutura condicional para verificar se o valor é par (`numero % 2 == 0`). Se for par, retorna 1; caso contrário, retorna 0. O código é útil para entender como implementar verificações de paridade em Assembly.
 
+### [`theLargest.c`](theLargest.c)
+Este exemplo declara um vetor de inteiros e percorre todos os seus elementos para encontrar o maior valor. O resultado é retornado como código de saída. O código é útil para entender como implementar laços, comparações e manipulação de vetores em Assembly.
+
