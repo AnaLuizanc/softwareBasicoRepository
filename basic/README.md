@@ -31,4 +31,10 @@ Demonstrar como traduzir operações comuns de C para Assembly, incluindo manipu
 - [`theLargest.s`](theLargest.s):
   Percorre um vetor de inteiros e encontra o maior valor presente. O resultado é retornado como código de saída. Útil para entender laços, comparações e manipulação de vetores em Assembly. Referência: [`basic_c/theLargest.c`](basic_c/theLargest.c).
 
+- [`theLargest2.s`](theLargest2.s):
+  Variante do algoritmo de busca do maior valor em um vetor, utilizando indexação explícita para acessar os elementos. O maior valor é atualizado conforme o vetor é percorrido. Útil para comparar diferentes formas de percorrer e acessar vetores em Assembly.
+
+- [`theLargest3.s`](theLargest3.s):
+  Outra variação do algoritmo de busca do maior valor, demonstrando diferentes estratégias de indexação e inicialização do maior valor. Permite comparar abordagens e reforçar o entendimento sobre manipulação de índices e acesso a memória em Assembly.
+
 Consulte cada arquivo `.s` para detalhes da implementação e compare com o respectivo código em C na pasta `basic_c` para entender a tradução entre as linguagens.
