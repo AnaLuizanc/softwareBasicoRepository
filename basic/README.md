@@ -37,4 +37,7 @@ Demonstrar como traduzir operações comuns de C para Assembly, incluindo manipu
 - [`theLargest3.s`](theLargest3.s):
   Outra variação do algoritmo de busca do maior valor, demonstrando diferentes estratégias de indexação e inicialização do maior valor. Permite comparar abordagens e reforçar o entendimento sobre manipulação de índices e acesso a memória em Assembly.
 
+- [`diffBetweenLargestSmallest.s`](diffBetweenLargestSmallest.s):
+  Percorre um vetor de inteiros, encontra o maior e o menor valor e retorna a diferença entre eles como código de saída. Útil para estudar buscas múltiplas em vetores e operações de comparação em Assembly. Referência: [`basic_c/diffBetweenLargestSmallest.c`](basic_c/diffBetweenLargestSmallest.c).
+
 Consulte cada arquivo `.s` para detalhes da implementação e compare com o respectivo código em C na pasta `basic_c` para entender a tradução entre as linguagens.

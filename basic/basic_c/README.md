@@ -31,3 +31,6 @@ Este exemplo declara uma variável global do tipo `int` e utiliza uma estrutura 
 ### [`theLargest.c`](theLargest.c)
 Este exemplo declara um vetor de inteiros e percorre todos os seus elementos para encontrar o maior valor. O resultado é retornado como código de saída. O código é útil para entender como implementar laços, comparações e manipulação de vetores em Assembly.
 
+### [`diffBetweenLargestSmallest.c`](diffBetweenLargestSmallest.c)
+Este exemplo declara um vetor de inteiros e percorre todos os seus elementos para encontrar o maior e o menor valor. Ao final, retorna a diferença entre o maior e o menor elemento do vetor. O código é útil para entender como implementar buscas múltiplas em um vetor e operações de comparação em Assembly.
+
