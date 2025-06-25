@@ -34,3 +34,6 @@ Este exemplo declara um vetor de inteiros e percorre todos os seus elementos par
 ### [`diffBetweenLargestSmallest.c`](diffBetweenLargestSmallest.c)
 Este exemplo declara um vetor de inteiros e percorre todos os seus elementos para encontrar o maior e o menor valor. Ao final, retorna a diferença entre o maior e o menor elemento do vetor. O código é útil para entender como implementar buscas múltiplas em um vetor e operações de comparação em Assembly.
 
+### [`switchCase.c`](switchCase.c)
+Este exemplo utiliza uma variável global do tipo `unsigned char` e um comando `switch` para atribuir diferentes valores a outra variável (`b`) de acordo com o valor de `a`. O código é útil para entender como implementar estruturas de seleção múltipla (switch/case) em Assembly.
+
