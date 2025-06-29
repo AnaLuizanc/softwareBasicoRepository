@@ -5,35 +5,25 @@ Esta pasta contém exemplos de códigos em linguagem C que servem como referênc
 ## Objetivo
 Os exemplos aqui presentes auxiliam na compreensão da lógica e estrutura dos programas, facilitando a tradução para Assembly.
 
-## Exemplos
+## Organização dos Arquivos
 
-### [`sumTwoVariables.c`](sumTwoVariables.c)
-Este código declara duas variáveis globais do tipo `long int`, atribui valores a elas, realiza a soma e retorna o resultado. Ele serve como um exemplo simples de manipulação de variáveis globais e operações aritméticas básicas, facilitando a compreensão de como implementar lógica semelhante em Assembly.
+- `arithmetics_c/`: Operações aritméticas e expressões
+    - [`sumTwoVariables.c`](arithmetics_c/sumTwoVariables.c)
+    - [`expressionArithmetic.c`](arithmetics_c/expressionArithmetic.c)
+    - [`expressionArithmetic2.c`](arithmetics_c/expressionArithmetic2.c)
+    - [`expressionWithMod.c`](arithmetics_c/expressionWithMod.c)
 
-### [`expressionArithmetic.c`](expressionArithmetic.c)
-Este exemplo declara três variáveis globais do tipo `int`, realiza uma operação aritmética envolvendo soma e multiplicação (`r = a + b * 2`) e retorna o resultado. O código ilustra como expressões aritméticas com múltiplos operadores e precedência podem ser implementadas em Assembly, servindo como referência para tradução de expressões matemáticas mais complexas.
+- `loops_c/`: Estruturas de repetição, fatorial, potência
+    - [`calculateExpoent.c`](loops_c/calculateExpoent.c)
+    - [`calculateFactorial.c`](loops_c/calculateFactorial.c)
 
-### [`expressionArithmetic2.c`](expressionArithmetic2.c)
-Neste exemplo, duas variáveis globais do tipo `char` são declaradas e inicializadas, e uma variável global do tipo `int` é usada para armazenar o resultado. O programa realiza a operação aritmética `r = a - b * 5` e retorna o resultado. Este código é útil para entender como trabalhar com tipos de dados diferentes (char e int) e como implementar expressões envolvendo multiplicação e subtração em Assembly, incluindo o tratamento de valores negativos.
+- `vectors_c/`: Manipulação de vetores, busca do maior, diferença entre maior e menor
+    - [`theLargest.c`](vectors_c/theLargest.c)
+    - [`diffBetweenLargestSmallest.c`](vectors_c/diffBetweenLargestSmallest.c)
 
-### [`expressionWithMod.c`](expressionWithMod.c)
-Este exemplo utiliza variáveis globais do tipo `short int` e realiza a operação aritmética `r = c % b * a`, ou seja, calcula o resto da divisão de `c` por `b` e multiplica esse resultado por `a`. O código é útil para compreender como implementar operações de módulo e multiplicação em Assembly, além de mostrar o uso de diferentes tipos de dados.
+- `conditionals_c/`: Condicionais, switch/case, paridade
+    - [`isEven.c`](conditionals_c/isEven.c)
+    - [`switchCase.c`](conditionals_c/switchCase.c)
 
-### [`calculateExpoent.c`](calculateExpoent.c)
-Este exemplo declara três variáveis globais do tipo `int` e utiliza um laço `while` para calcular a potência de uma base elevada a um expoente (`res = base^expoente`). A cada iteração, multiplica o resultado atual pela base e decrementa o expoente até que ele seja zero. O código é útil para entender como implementar laços e operações de exponenciação em Assembly.
-
-### [`calculateFactorial.c`](calculateFactorial.c)
-Este exemplo declara duas variáveis globais do tipo `int` e utiliza um laço `while` para calcular o fatorial de um número (`res = fatorial!`). A cada iteração, multiplica o resultado atual pelo valor do fatorial e decrementa o fatorial até que ele seja zero. O código é útil para entender como implementar laços e operações de fatorial em Assembly.
-
-### [`isEven.c`](isEven.c)
-Este exemplo declara uma variável global do tipo `int` e utiliza uma estrutura condicional para verificar se o valor é par (`numero % 2 == 0`). Se for par, retorna 1; caso contrário, retorna 0. O código é útil para entender como implementar verificações de paridade em Assembly.
-
-### [`theLargest.c`](theLargest.c)
-Este exemplo declara um vetor de inteiros e percorre todos os seus elementos para encontrar o maior valor. O resultado é retornado como código de saída. O código é útil para entender como implementar laços, comparações e manipulação de vetores em Assembly.
-
-### [`diffBetweenLargestSmallest.c`](diffBetweenLargestSmallest.c)
-Este exemplo declara um vetor de inteiros e percorre todos os seus elementos para encontrar o maior e o menor valor. Ao final, retorna a diferença entre o maior e o menor elemento do vetor. O código é útil para entender como implementar buscas múltiplas em um vetor e operações de comparação em Assembly.
-
-### [`switchCase.c`](switchCase.c)
-Este exemplo utiliza uma variável global do tipo `unsigned char` e um comando `switch` para atribuir diferentes valores a outra variável (`b`) de acordo com o valor de `a`. O código é útil para entender como implementar estruturas de seleção múltipla (switch/case) em Assembly.
+Consulte cada arquivo `.c` para detalhes da implementação e compare com o respectivo código em Assembly na pasta `basic` para entender a tradução entre as linguagens.
 
