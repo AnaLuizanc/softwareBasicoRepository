@@ -8,7 +8,16 @@ Os exemplos aqui presentes auxiliam na compreensão de conceitos intermediários
 ## Exemplos
 
 ### [`factorial.c`](factorial.c)
-Este exemplo declara uma variável global para o número a ser fatorado e utiliza um laço `for` para calcular o fatorial desse número, multiplicando o resultado acumulado por cada valor decrescente até 1. O resultado é retornado como código de saída. O código é útil para entender como implementar laços, manipulação de variáveis e cálculo de fatorial em Assembly.
+Calcula fatorial usando variáveis globais e laço `for`. Demonstra: variáveis globais, laços de repetição, operações aritméticas.
+
+### [`sumFunction.c`](sumFunction.c)
+Implementa função de soma usando variáveis globais. Demonstra: separação de funções, variáveis globais compartilhadas, chamada de função.
+
+### [`runExpoent.c`](runExpoent.c)
+Interface C para chamar função Assembly de exponenciação (4²=16). Demonstra: interoperabilidade C/Assembly, protótipos de função, compilação híbrida.
+
+### [`functionCaller.c`](functionCaller.c)
+Manipula ponteiros para trocar valores e fazer cálculos (resultado: 832093). Demonstra: ponteiros, passagem por referência, múltiplas operações aritméticas.
 
 ## Organização
 - Cada arquivo `.c` aborda um conceito ou problema intermediário, servindo de base para a tradução e comparação com Assembly.
