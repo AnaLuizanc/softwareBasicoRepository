@@ -12,17 +12,18 @@ Calcula fatorial usando pilha. Empilha valores de 5 até 1, depois desempilha mu
 
 ### [`expoentWithFunction.s`](expoentWithFunction.s)
 Função de exponenciação para ser chamada por código C. Calcula base^expoente usando loop e multiplicação. Demonstra: funções, interoperabilidade C/Assembly, convenções de chamada.
+```bash
+# Exemplo: chamando função Assembly de código C
+gcc intermediary_c/runExpoent.c expoentWithFunction.s -o runExpoentWithFunction.out
+```
 
 ### [`sumFunction.s`](sumFunction.s)
 Implementa função de soma usando variáveis globais. Define função `soma()` que adiciona duas variáveis globais A e B. Demonstra: funções em Assembly, variáveis globais, stack frame.
 
 ### [`runExpoentWithFunction.s`](runExpoentWithFunction.s)
 Programa principal que chama a função `expoent()` para calcular 3². Demonstra: chamada de função Assembly, passagem de parâmetros via registradores, syscalls.
-
-## Compilação e Execução
-
+Para compilar: 
 ```bash
-# Função com programa principal
 as expoentWithFunction.s -o expoentWithFunction.o
 as runExpoentWithFunction.s -o runExpoentWithFunction.o
 ld expoentWithFunction.o runExpoentWithFunction.o -o runExpoentWithFunction.out
