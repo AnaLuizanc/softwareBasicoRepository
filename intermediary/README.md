@@ -8,7 +8,25 @@ Os exemplos aqui presentes auxiliam na compreensão de técnicas intermediárias
 ## Exemplos
 
 ### [`factorial.s`](factorial.s)
-Este exemplo calcula o fatorial de um número utilizando a pilha para armazenar os valores a serem multiplicados. O programa empilha todos os valores de `numero` até 1, depois desempilha e multiplica cada valor, acumulando o resultado em `rax`. O resultado final é retornado como código de saída. O código é útil para entender como implementar laços, manipulação de pilha e cálculo de fatorial em Assembly.
+Calcula fatorial usando pilha. Empilha valores de 5 até 1, depois desempilha multiplicando cada valor. Demonstra: manipulação de pilha, laços, operações aritméticas.
+
+### [`expoentWithFunction.s`](expoentWithFunction.s)
+Função de exponenciação para ser chamada por código C. Calcula base^expoente usando loop e multiplicação. Demonstra: funções, interoperabilidade C/Assembly, convenções de chamada.
+
+### [`sumFunction.s`](sumFunction.s)
+Implementa função de soma usando variáveis globais. Define função `soma()` que adiciona duas variáveis globais A e B. Demonstra: funções em Assembly, variáveis globais, stack frame.
+
+### [`runExpoentWithFunction.s`](runExpoentWithFunction.s)
+Programa principal que chama a função `expoent()` para calcular 3². Demonstra: chamada de função Assembly, passagem de parâmetros via registradores, syscalls.
+
+## Compilação e Execução
+
+```bash
+# Função com programa principal
+as expoentWithFunction.s -o expoentWithFunction.o
+as runExpoentWithFunction.s -o runExpoentWithFunction.o
+ld expoentWithFunction.o runExpoentWithFunction.o -o runExpoentWithFunction.out
+```
 
 ## Sugestão de uso
 - Analise o código Assembly para entender a lógica e estrutura.
