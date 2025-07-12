@@ -1,71 +1,183 @@
-# Programa para converter string para inteiro
-# Entrada: RDI = ponteiro para string
-# Saída:   RAX = valor inteiro convertido
-
+.section .data
+str1: .asciz "123"
+str2: .asciz "-456"
+str3: .asciz "+789"
+str4: .asciz "0"
+buffer: .space 20
+newline: .ascii "\n"
 .section .text
-.global string_to_int
+.globl _start
 
-# Entrada: RSI = ponteiro para dígitos
-# Saída:   RAX = valor inteiro convertido
-convert_ascii:
-    pushq %rbp
-    movq %rsp, %rbp
-    xorq %rax, %rax           # rax = resultado = 0
-    .loop:
-        movb (%rsi), %dl
-        cmpb $0, %dl
-        je .end_func
-        cmpb $'0', %dl
-        jb .end_func
-        cmpb $'9', %dl
-        ja .end_func
-        imulq $10, %rax, %rax      # resultado = resultado * 10
-        subb $'0', %dl
-        movzbq %dl, %rdx
-        addq %rdx, %rax           # resultado += (dl - '0')
-        incq %rsi
-        jmp .loop
-    .end_func:
-        popq %rbp
-        ret
+_converte_string_para_int:
+    pushq %rbx
+    pushq %rcx
+    pushq %rdx
+    
+    xorq %rax, %rax # acumulador = 0
+    xorq %rbx, %rbx # flag negativo = 0
+    movq %rdi, %rcx # ponteiro da string
+    
+    movzbq (%rcx), %rdx
+    cmpq $'-', %rdx
+    jne _verifica_sinal_positivo
+    movq $1, %rbx
+    incq %rcx
+    jmp _converte_para_inteiro
+    
+_verifica_sinal_positivo:
+    cmpq $'+', %rdx
+    jne _converte_para_inteiro
+    incq %rcx
+    
+_converte_para_inteiro:
+    movzbq (%rcx), %rdx
+    testq %rdx, %rdx
+    jz _finaliza_conversao_p_int
+    
+    subq $'0', %rdx
+    imulq $10, %rax
+    addq %rdx, %rax
+    
+    incq %rcx
+    jmp _converte_para_inteiro
+    
+_finaliza_conversao_p_int:
+    testq %rbx, %rbx
+    jz _done
+    negq %rax
 
-string_to_int:
-    pushq %rbp
-    movq %rsp, %rbp
-    pushq %rbx          
-    movq %rdi, %rsi          # rsi = ptr para string
-    xorl %ebx, %ebx          # ebx = sinal (0=positivo, 1=negativo)
-
-# Pular espaços em branco
-.skip_spaces:
-    movb (%rsi), %al
-    cmpb $' ', %al
-    je .inc_ptr
-    cmpb $9, %al   
-    je .inc_ptr
-    jmp .check_sign
-.inc_ptr:
-    incq %rsi
-    jmp .skip_spaces
-
-.check_sign:
-    movb (%rsi), %al
-    cmpb $'-', %al
-    jne .check_plus
-    movb $1, %bl              # sinal negativo
-    incq %rsi
-    jmp .call_convert_ascii
-.check_plus:
-    cmpb $'+', %al
-    jne .call_convert_ascii
-    incq %rsi
-
-.call_convert_ascii:
-    call convert_ascii         # resultado em rax
-    cmpb $1, %bl
-    jne .end
-    negq %rax                # se negativo, resultado = -resultado
-.end:
+_done:
+    popq %rdx
+    popq %rcx
     popq %rbx
-    popq %rbp
     ret
+
+converte_int_para_string:
+    pushq %rbx
+    pushq %rcx
+    pushq %rdx
+    pushq %r8
+    pushq %r9
+    
+    movq %rdi, %rax
+    movq %rsi, %r8
+    xorq %rbx, %rbx
+    
+    movq $0, %rcx
+limpa_buffer:
+    movb $0, (%r8, %rcx)
+    incq %rcx
+    cmpq $20, %rcx
+    jl limpa_buffer
+    
+    testq %rax, %rax
+    jnz nao_eh_zero 
+    movb $'0', (%rsi) # executa se for 0
+    movq %rsi, %rax
+    jmp end
+    
+nao_eh_zero:
+    testq %rax, %rax
+    jns numero_absoluto
+    negq %rax
+    movq $1, %rbx
+
+numero_absoluto:
+    movq %rsi, %r8
+    addq $19, %r8 # aponta para o final do buffer
+    movb $0, (%r8)
+    decq %r8
+    
+    movq $10, %rcx
+
+extrai_digitos_loop:
+    xorq %rdx, %rdx
+    divq %rcx # rdx = rax % 10
+    addq $'0', %rdx
+    movb %dl, (%r8)
+    decq %r8
+    testq %rax, %rax
+    jnz extrai_digitos_loop
+    
+    cmpq $1, %rbx 
+    jne finaliza_conversao
+    movb $'-', (%r8) # adiciona sinal - se negativo
+    decq %r8
+
+finaliza_conversao:
+    incq %r8  # aponta para o início da string
+    movq %r8, %rax
+
+end:
+    popq %r9
+    popq %r8
+    popq %rdx
+    popq %rcx
+    popq %rbx
+    ret
+
+imprime:
+    pushq %rax
+    pushq %rdi
+    pushq %rsi
+    pushq %rdx
+    pushq %rcx
+    
+    movq $buffer, %rsi
+    call converte_int_para_string # converte número para string
+    
+    # Calcula o tamanho da string
+    movq %rax, %rsi # ponteiro para início da string
+    movq %rax, %rcx # copia o ponteiro
+    xorq %rdx, %rdx # contador de caracteres
+    
+calc_tamanho:
+    movzbq (%rcx), %rdi
+    testq %rdi, %rdi
+    jz print_string
+    incq %rcx
+    incq %rdx
+    jmp calc_tamanho
+    
+print_string:
+    movq $1, %rax
+    movq $1, %rdi
+    syscall
+    
+    movq $1, %rax
+    movq $1, %rdi
+    movq $newline, %rsi
+    movq $1, %rdx
+    syscall
+    
+    popq %rcx
+    popq %rdx
+    popq %rsi
+    popq %rdi
+    popq %rax
+    ret
+
+_start:
+    movq $str1, %rdi
+    call _converte_string_para_int
+    movq %rax, %rdi
+    call imprime
+    
+    movq $str2, %rdi
+    call _converte_string_para_int
+    movq %rax, %rdi
+    call imprime
+
+    movq $str3, %rdi
+    call _converte_string_para_int
+    movq %rax, %rdi
+    call imprime
+
+    movq $str4, %rdi
+    call _converte_string_para_int
+    movq %rax, %rdi
+    call imprime
+    
+    movq $60, %rax
+    movq $0, %rdi
+    syscall
