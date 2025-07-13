@@ -13,6 +13,7 @@ Este repositório contém uma coleção de programas escritos em Assembly (x86_6
 | `intermediary/`          | Programas intermediários com funções, manipulação de pilha e conceitos mais avançados. |
 | `intermediary/intermediary_c/` | Exemplos em C correspondentes aos programas Assembly da pasta `intermediary/`. |
 | `string_to_int/`         | Projeto completo de conversão entre strings e inteiros. |
+| `string_to_float/`       | Projeto completo de conversão entre strings e números de ponto flutuante. |
 
 ---
 
